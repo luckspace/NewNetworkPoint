@@ -75,8 +75,9 @@ bool PermissionSyncManager::InsertPermission(const std::string& _group, const st
 	auto item = instance.find(_group);
 	if (item != instance.end())
 	{
+		//	插入权限
 		item->second->InsertPermission(_permis);
-
+		//	同步权限
 		PermissionSyncEvent sync_event(_group, _permis, PermissionSyncEvent::ModeInsert);
 		th_pool->Submit(SyncToMySql, sync_event);
 	}
@@ -88,8 +89,9 @@ bool PermissionSyncManager::DeletePermission(const std::string& _group, const st
 	auto item = instance.find(_group);
 	if (item != instance.end())
 	{
+		//	删除权限
 		item->second->DeletePermission(_permis);
-
+		//	同步权限
 		PermissionSyncEvent sync_event(_group, _permis, PermissionSyncEvent::ModeDelete);
 		th_pool->Submit(SyncToMySql, sync_event);
 		return true;
@@ -99,6 +101,7 @@ bool PermissionSyncManager::DeletePermission(const std::string& _group, const st
 
 bool PermissionSyncManager::CreatePermissionGroup(const std::string& _group)
 {
+	//	临时权限组
 	return instance.insert({ _group, std::make_shared<luck::permis::PermissionGroup>(_group) }).second;
 }
 
