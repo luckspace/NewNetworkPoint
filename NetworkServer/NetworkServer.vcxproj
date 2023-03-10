@@ -97,6 +97,7 @@
     <QtRcc Include="NetworkServer.qrc" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="AsymmetricKeys.cpp" />
     <ClCompile Include="ConsoleWidget.cpp" />
     <ClCompile Include="LogSyncToMySql.cpp" />
     <ClCompile Include="LuckPermis.cpp" />
@@ -107,6 +108,7 @@
     <QtMoc Include="ConsoleWidget.hpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AsymmetricKeys.hpp" />
     <ClInclude Include="LogSyncToMySql.hpp" />
     <ClInclude Include="LuckPermis.hpp" />
     <ClInclude Include="PermisSyncToMySql.hpp" />

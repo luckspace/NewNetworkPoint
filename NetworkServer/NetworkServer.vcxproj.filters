@@ -52,6 +52,9 @@
     <ClCompile Include="LogSyncToMySql.cpp">
       <Filter>mysql</Filter>
     </ClCompile>
+    <ClCompile Include="AsymmetricKeys.cpp">
+      <Filter>mysql</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="ConsoleWidget.hpp">
@@ -76,6 +79,9 @@
     </ClInclude>
     <ClInclude Include="MySqlThreadPool.hpp">
       <Filter>threadpool</Filter>
+    </ClInclude>
+    <ClInclude Include="AsymmetricKeys.hpp">
+      <Filter>mysql</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

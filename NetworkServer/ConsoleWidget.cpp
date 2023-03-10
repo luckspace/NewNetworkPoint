@@ -25,12 +25,8 @@ ConsoleWidget::ConsoleWidget(QWidget* _parent) : QWidget(_parent)
 	tcp_server->listen(QHostAddress::Any, 10032);
 }
 
-#include <memory>
-
 #include <qjsondocument.h>
 #include <qjsonobject.h>
-
-#include <mysql/jdbc.h>
 
 #include <CryptoEcc.h>
 
