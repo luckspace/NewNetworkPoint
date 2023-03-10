@@ -16,7 +16,7 @@ public:
 	{}
 
 	LogSyncEvent(const std::string& _type, const uint64_t& _code, const std::string& _status, const std::string& _msg, const uint64_t& _timepoint) :
-	type{ _type }, code{ _code }, status{ _status }, msg{ _msg }, timepoint{ timepoint }
+	type{ _type }, code{ _code }, status{ _status }, msg{ _msg }, timepoint{ _timepoint }
 	{}
 
 	std::string type;
@@ -29,11 +29,17 @@ public:
 class LogSyncManager
 {
 public:
+	using Self = LogSyncManager;
+
+	using SelfShare = std::shared_ptr<LogSyncManager>;
+
 	friend class Singleton<LogSyncManager>;
 
 	static void SyncToMySql(luck::sql::MySqlSubmitFirst _sql_con, const LogSyncEvent& _event);
 
 	void Upload(const LogSyncEvent& _event);
+
+	void SetMySqlPool(const luck::sql::MySqlThreadPool::SelfShare& _th_pool);
 private:
 	LogSyncManager();
 

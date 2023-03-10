@@ -2,7 +2,7 @@
 
 void LogSyncManager::SyncToMySql(luck::sql::MySqlSubmitFirst _sql_con, const LogSyncEvent& _event)
 {
-	std::unique_ptr<sql::PreparedStatement> sql_smt(_sql_con->prepareStatement(R"()"));
+	std::unique_ptr<sql::PreparedStatement> sql_smt(_sql_con->prepareStatement(R"(insert into `aerfa_log` (`type`, `code`, `status`, `msg`, `timepoint`) values (?, ?, ?, ?, ?))"));
 	sql_smt->setString(1, _event.type);
 	sql_smt->setUInt64(2, _event.code);
 	sql_smt->setString(3, _event.status);
@@ -14,6 +14,11 @@ void LogSyncManager::SyncToMySql(luck::sql::MySqlSubmitFirst _sql_con, const Log
 void LogSyncManager::Upload(const LogSyncEvent& _event)
 {
 	th_pool->Submit(LogSyncManager::SyncToMySql, _event);
+}
+
+void LogSyncManager::SetMySqlPool(const luck::sql::MySqlThreadPool::SelfShare& _th_pool)
+{
+	th_pool = _th_pool;
 }
 
 LogSyncManager::LogSyncManager() {}

@@ -42,17 +42,6 @@ public:
 	void GainFromDatabase(const luck::sql::MySqlAttribute& _attri);
 
 	void SetMySqlThPool(const luck::sql::MySqlThreadPool::SelfShare& _th_pool);
-	
-	void Point()
-	{
-		th_pool->Submit(&PermissionSyncManager::Submit, this, 100);
-	}
-
-	void Submit(luck::sql::MySqlSubmitFirst _sql_con, int a)
-	{
-
-	}
-
 private:
 	PermissionSyncManager();
 
