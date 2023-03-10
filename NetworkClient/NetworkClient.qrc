@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/">
+        <file>PubResource/ServerEccPublicKey.json</file>
+    </qresource>
+</RCC>

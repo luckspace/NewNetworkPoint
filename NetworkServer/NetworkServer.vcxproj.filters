@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>qml;cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>qrc;rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Form Files">
+      <UniqueIdentifier>{99349809-55BA-4b9d-BF79-8FDBB0286EB3}</UniqueIdentifier>
+      <Extensions>ui</Extensions>
+    </Filter>
+    <Filter Include="Translation Files">
+      <UniqueIdentifier>{639EADAA-A684-42e4-A9AD-28FC9BCB8F7C}</UniqueIdentifier>
+      <Extensions>ts</Extensions>
+    </Filter>
+    <Filter Include="mysql">
+      <UniqueIdentifier>{6a3ba40e-8400-4771-b725-ab317125a197}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="threadpool">
+      <UniqueIdentifier>{4b3e4536-6ae2-46c8-b89a-4723b3228f0f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="permission">
+      <UniqueIdentifier>{c9cb00bc-9517-4421-b0bd-e371461f7704}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <QtRcc Include="NetworkServer.qrc">
+      <Filter>Resource Files</Filter>
+    </QtRcc>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ConsoleWidget.cpp">
+      <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="LuckPermis.cpp">
+      <Filter>permission</Filter>
+    </ClCompile>
+    <ClCompile Include="PermisSyncToMySql.cpp">
+      <Filter>mysql</Filter>
+    </ClCompile>
+    <ClCompile Include="LogSyncToMySql.cpp">
+      <Filter>mysql</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="ConsoleWidget.hpp">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="LuckTool.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="LuckPermis.hpp">
+      <Filter>permission</Filter>
+    </ClInclude>
+    <ClInclude Include="PermisSyncToMySql.hpp">
+      <Filter>mysql</Filter>
+    </ClInclude>
+    <ClInclude Include="LogSyncToMySql.hpp">
+      <Filter>mysql</Filter>
+    </ClInclude>
+    <ClInclude Include="LuckThreadPool.hpp">
+      <Filter>threadpool</Filter>
+    </ClInclude>
+    <ClInclude Include="MySqlThreadPool.hpp">
+      <Filter>threadpool</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
