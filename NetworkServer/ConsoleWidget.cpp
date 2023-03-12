@@ -1,13 +1,27 @@
 #include "ConsoleWidget.hpp"
 
+#include <qicon.h>
+
 ConsoleWidget::ConsoleWidget(QWidget* _parent) : QWidget(_parent)
 {
+	//	sql title
+	sqlserver_title = new QLabel("SqlServer Status");
+	sqlserver_pixmap = new QLabel();
+	sqlserver_pixmap->setPixmap(QIcon(":/resource/pixmap_svg/StatusStopped.svg").pixmap(32, 32));
 
-	output_edit = new QPlainTextEdit(this);
+	sqlserver_box = new QHBoxLayout();
+	sqlserver_box->addWidget(sqlserver_title);
+	sqlserver_box->addWidget(sqlserver_pixmap);
 
-	center_box = new QVBoxLayout(this);
+	//	text edit
+	output_edit = new QPlainTextEdit();
+
+	//	box
+	center_box = new QVBoxLayout();
+	center_box->addLayout(sqlserver_box);
 	center_box->addWidget(output_edit);
 
+	//	widget
 	setWindowTitle("server console");
 	resize(800, 600);
 	setLayout(center_box);
@@ -27,8 +41,9 @@ ConsoleWidget::ConsoleWidget(QWidget* _parent) : QWidget(_parent)
 
 #include <qjsondocument.h>
 #include <qjsonobject.h>
-
 #include <CryptoEcc.h>
+
+#include <mysql/jdbc.h>
 
 NetworkSocket::NetworkSocket(QTcpSocket* _bind, QObject* _parent) : QObject(_parent), bind_socket(_bind)
 {

@@ -9,6 +9,9 @@ int main(int argc, char* argv[])
 {
 	QApplication app(argc, argv);
 
+	QGuiApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
+	QGuiApplication::setAttribute(Qt::AA_UseHighDpiPixmaps);
+
 	luck::sql::MySqlAttribute mysql_root("127.0.0.1:3306", "root", "356231064", "localpoint");
 	
 	//	base thread pool

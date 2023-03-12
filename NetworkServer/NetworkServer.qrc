@@ -1,4 +1,5 @@
 <RCC>
-    <qresource prefix="NetworkServer">
+    <qresource prefix="/">
+        <file>resource/pixmap_svg/StatusStopped.svg</file>
     </qresource>
 </RCC>

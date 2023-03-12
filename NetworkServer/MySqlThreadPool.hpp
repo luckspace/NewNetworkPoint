@@ -88,7 +88,7 @@ namespace luck::sql
 		/// <param name="..._ag">任务的参数</param>
 		/// <returns>无返回值</returns>
 		template<typename Do, typename... Args>
-		std::invoke_result_t<Do, MySqlConnectionPointer, Args...>
+		std::enable_if_t<std::is_void_v<std::invoke_result_t<Do, MySqlConnectionPointer, Args...>>, void>
 			Submit(Do&& _do, Args&&... _ag)
 		{
 			auto bind_temp = std::bind(std::forward<Do>(_do), std::placeholders::_1, std::forward<Args>(_ag)...);
@@ -114,7 +114,7 @@ namespace luck::sql
 		/// <param name="..._ag">成员函数的参数</param>
 		/// <returns>无返回值</returns>
 		template<typename Do, typename Nt, typename... Args>
-		std::invoke_result_t<Do, Nt, MySqlConnectionPointer, Args...>
+		std::enable_if_t<std::is_void_v<std::invoke_result_t<Do, Nt, MySqlConnectionPointer, Args...>>, void>
 			Submit(Do&& _do, Nt&& _nt, Args&&... _ag)
 		{
 			auto bind_temp = std::bind(std::forward<Do>(_do), std::forward<Nt>(_nt), std::placeholders::_1, std::forward<Args>(_ag)...);

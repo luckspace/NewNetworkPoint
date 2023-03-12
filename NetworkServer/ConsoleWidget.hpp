@@ -6,6 +6,8 @@
 #include <qtcpserver.h>
 #include <qtcpsocket.h>
 
+#include <qlabel.h>
+
 class NetworkSocket : public QObject
 {
 	Q_OBJECT
@@ -31,4 +33,10 @@ private:
 
 	//	network
 	QTcpServer* tcp_server;
+
+	//	mysql status
+	QLabel* sqlserver_title;
+	QLabel* sqlserver_pixmap;
+
+	QHBoxLayout* sqlserver_box;
 };
